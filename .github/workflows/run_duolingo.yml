@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  OPENAI_API_KEY: ${{ secrets.OPEN_AI_API }}
+  OPEN_AI_API: ${{ secrets.OPEN_AI_API }}
   EDGE_GPT_COOKIE: ${{ secrets.EDGE_GPT_COOKIE }}
   LATEST_WORDS_NUMBER: 20
 
