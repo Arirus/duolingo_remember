@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  OPENAI_API_KEY: ${{ secrets.OPEN_AI_API }}
   EDGE_GPT_COOKIE: ${{ secrets.EDGE_GPT_COOKIE }}
   LATEST_WORDS_NUMBER: 20
 
@@ -28,7 +28,7 @@ jobs:
 
       - name: Send new words
         run: |
-          python duolingo.py ${{ secrets.DUOLINGO_USERNAME }} ${{ secrets.DUOLINGO_JWT }}  --tele_token ${{ secrets.TELE_TOKEN }} --tele_chat_id ${{ secrets.TELE_CHAT_ID }} --latest_number ${{ env.LATEST_WORDS_NUMBER }}
+          python duolingo.py ${{ secrets.DUOLINGGO_USERNAME }} ${{ secrets.DUOLINGGO_JWT }}  --tele_token ${{ secrets.TELE_TOKEN }} --tele_chat_id ${{ secrets.TELE_CHAT_ID }} --latest_number ${{ env.LATEST_WORDS_NUMBER }}
 
       - name: Check file new existence
         id: check_mp3_new_files
