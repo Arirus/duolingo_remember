@@ -189,7 +189,7 @@ def get_duolingo_words_and_save_mp3(tts_url, latest_num=100):
     words_str = ",".join(words_list)
     conversion = ""
     conversion_trans = ""
-    if os.environ.get("OPEN_AI_API"):
+    if os.environ.get("OPENAI_API_KEY"):
         article = call_openai_to_make_article(words_str, language)
         article_trans = call_openai_to_make_trans(article)
         # conversation
