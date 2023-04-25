@@ -189,7 +189,7 @@ def get_duolingo_words_and_save_mp3(tts_url, latest_num=100):
     words_str = ",".join(words_list)
     conversion = ""
     conversion_trans = ""
-    if os.environ.get("OPENAI_API_KEY"):
+    if os.environ.get("OPEN_AI_API"):
         article = call_openai_to_make_article(words_str, language)
         article_trans = call_openai_to_make_trans(article)
         # conversation
@@ -200,7 +200,7 @@ def get_duolingo_words_and_save_mp3(tts_url, latest_num=100):
         article = call_edge_gpt_to_make_article(words_str, language)
         article_trans = call_edge_gpt_to_make_trans(article)
     else:
-        raise Exception("Please provide OPENAI_API_KEY or EDGE_GPT_COOKIE in env")
+        raise Exception("Please provide OPEN_AI_API or EDGE_GPT_COOKIE in env")
 
     # call edge-tts to generate mp3
     make_edge_article_tts_mp3(article, language_short)
